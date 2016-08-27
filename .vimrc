@@ -16,11 +16,10 @@ if has("autocmd")
      filetype plugin indent on
 endif
 
-    "
     set autoindent        " 设置自动对齐(缩进)：即每行的缩进值与上一行相等；使用 noautoindent 取消设置
     set smartindent        " 智能对齐方式
     set tabstop=4        " 设置制表符(tab键)的宽度
-    set softtabstop=4     " 设置软制表符的宽度    
+    set softtabstop=4     " 设置软制表符的宽度
     set shiftwidth=4    " (自动) 缩进使用的4个空格
     set cindent            " 使用 C/C++ 语言的自动缩进方式
     set backspace=2    " 设置退格键可用
@@ -29,8 +28,7 @@ endif
     set mouse=a            " Enable mouse usage (all modes)    "使用鼠标
     set number            " Enable line number    "显示行号
 
-    "--状态行设置--
-    set laststatus=2 " 总显示最后一个窗口的状态行；设为1则窗口数多于一个的时候显示最后一个窗口的状态行；0不显示最后一个窗口的状态行
+
     set ruler            " 标尺，用于显示光标位置的行号和列号，逗号分隔。每个窗口都有自己的标尺。如果窗口有状态行，标尺在那里显示。否则，它显示在屏幕的最后一行上。
 
     "--命令行设置--
@@ -40,7 +38,7 @@ endif
     "--find setting--
     set ignorecase        " 搜索模式里忽略大小写
     set incsearch        " 输入字符串就显示匹配点
-    set hlsearch   
+    set hlsearch
 
 	"背景透明
 	hi Normal  ctermfg=252 ctermbg=none
@@ -50,8 +48,8 @@ endif
     set scrolloff=3 	"光标移动到buffer的顶部和底部时保持3行距离
     set foldenable 	"允许折叠
     set foldmethod=manual	"手动折叠
-""    set cursorline	" 高亮显示当前行/列
-    "set cursorcolumn
+	set cursorline	" 高亮显示当前行/列
+    set cursorcolumn
     set textwidth=80	"设置文本宽度
     set colorcolumn=+1
 
@@ -67,19 +65,19 @@ endif
 
 "编码设置
 "----------------------------------------------------------------
-"Vim 在与屏幕/键盘交互时使用的编码(取决于实际的终端的设定)        
+"Vim 在与屏幕/键盘交互时使用的编码(取决于实际的终端的设定)
 set encoding=utf-8
 set langmenu=zh_CN.UTF-8
-" 设置打开文件的编码格式  
-set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1 
+" 设置打开文件的编码格式
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set fileencoding=utf-8
 "解决菜单乱码
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 "解决consle输出乱码
-"set termencoding = cp936  
+"set termencoding = cp936
 "设置中文提示
-language messages zh_CN.utf-8 
+language messages zh_CN.utf-8
 "设置中文帮助
 set helplang=cn
 "设置为双字宽显示，否则无法完整显示如:☆
@@ -151,34 +149,34 @@ Bundle 'vim-scripts/matchit.zip'
 "Bundle 'Valloric/YouCompleteMe' //强大的自动补全，谁用谁知道
 "Bundle 'Lokaltog/vim-powerline'
 "强大的文件搜索
-Bundle 'kien/ctrlp.vim' 
+Bundle 'kien/ctrlp.vim'
 "使用,fu打开进行搜索类似go to definition
-Bundle 'tacahiroy/ctrlp-funky' 
+Bundle 'tacahiroy/ctrlp-funky'
 "模糊查询　输入,,/查询
-Bundle 'ggVGc/vim-fuzzysearch' 
+Bundle 'ggVGc/vim-fuzzysearch'
 "Bundle 'godlygeek/tabular' //快速对齐
 "Bundle 'terryma/vim-multiple-cursors' //多光标同时编辑
 Bundle 'tpope/vim-haml'
 "Bundle 'genoma/vim-less' //less支持
-Bundle 'Raimondi/delimitMate' 
-Bundle 'hail2u/vim-css3-syntax' 
-Bundle 'othree/html5.vim' 
-Bundle 'docunext/closetag.vim' 
+Bundle 'Raimondi/delimitMate'
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'othree/html5.vim'
+Bundle 'docunext/closetag.vim'
 "自动高亮匹配标签
-Bundle 'gregsexton/MatchTag' 
+Bundle 'gregsexton/MatchTag'
 "Bundle 'easymotion/vim-easymotion' //强大的搜索定位
 "Bundle 'terryma/vim-expand-region' //自动选择括号等符号中的内容
 "Bundle 'tpope/vim-surround' //符号自动环绕
 "Bundle 'tpope/vim-repeat' //更为强大的重做功能
 "自动关闭html xml标签
-Bundle 'alvan/vim-closetag' 
+Bundle 'alvan/vim-closetag'
 "显示以及去除行尾空格使用,空格
-Bundle 'bronson/vim-trailing-whitespace' 
+Bundle 'bronson/vim-trailing-whitespace'
 " <C-\>触发／
 " 安装ultisnips
 " 安装代码块集合
-Bundle 'SirVer/ultisnips' 
-Bundle 'honza/vim-snippets' 
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
 Bundle 'rstacruz/vim-ultisnips-css'
 "Bundle 'tacahiroy/ctrlp-funky' //基于ctrlp的搜索函数等变量名
 "Bundle 'dyng/ctrlsf.vim' //基于ctrlp的文件内容搜索，配合vim－multiple－cursors可以很方便一次修改多个文件的内容
@@ -261,7 +259,7 @@ autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 
 """"""""
 "ctags
-let Tlist_Sort_Type = "name"    " 按照名称排序  
+let Tlist_Sort_Type = "name"    " 按照名称排序
 "请使用此命令
 "ctags -I __THROW --file-scope=yes --langmap=c:+.h --languages=c,c++ --links=yes --c-kinds=+p --fields=+S  -R -f ~/.vim/systags /usr/include /usr/local/include
 set tags=tags
@@ -272,19 +270,19 @@ set tags+=./tags
 """"""""
 "tagbar
 "nmap <Leader>tb :TagbarToggle<CR>        "快捷键设置
-" 设置 tagbar 子窗口的位置出现在主编辑区的左边 
-let tagbar_left=1
+" 设置 tagbar 子窗口的位置出现在主编辑区的左边
+let tagbar_left=0
 let g:tagbar_ctags_bin='ctags'            "ctags程序的路径
 let g:tagbar_width=25                     "窗口宽度的设置
-autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen()     "如果是c语言的程序的话，tagbar自动开启
-" tagbar 子窗口中不显示冗余帮助信息 
+autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx,*.py,*.sh call tagbar#autoopen()     "tagbar自动开启
+" tagbar 子窗口中不显示冗余帮助信息
 let g:tagbar_compact=1
-map <F2> :TagbarToggle<CR>
+map <F3> :TagbarToggle<CR>
 
 "NERDTree
-let NERDTreeWinPos='right'
+let NERDTreeWinPos='left'
 let NERDTreeWinSize=25
-map <F3> <ESC>:NERDTreeToggle<CR>
+map <F2> <ESC>:NERDTreeToggle<CR>
 
 """"""""
 "nathanaelkane/vim-indent-guides
@@ -299,24 +297,21 @@ map <F3> <ESC>:NERDTreeToggle<CR>
 
 """"""""
 "MiniBufExplorer多文档
-"let g:miniBufExplMapWindowNavVim = 1   
-"let g:miniBufExplMapWindowNavArrows = 1   
-"let g:miniBufExplMapCTabSwitchBufs = 1   
-"let g:miniBufExplModSelTarget = 1  
+"let g:miniBufExplMapWindowNavVim = 1
+"let g:miniBufExplMapWindowNavArrows = 1
+"let g:miniBufExplMapCTabSwitchBufs = 1
+"let g:miniBufExplModSelTarget = 1
 "let g:miniBufExplMoreThanOne=0
 
 "map <F11> :MBEbp<CR>
 "map <F12> :MBEbn<CR>
 
-""""""""
-"vim-airline状态栏增强
-set laststatus=2
 
 
 """"""""
-"xptemplate  
-let g:xptemplate_vars = "SParg=&BRfun= &BRloop= "   " 代码紧贴括号,函数名单行,花括号不对齐  
-let php_noShortTags = 1                             " 禁用php短标记  
+"xptemplate
+let g:xptemplate_vars = "SParg=&BRfun= &BRloop= "   " 代码紧贴括号,函数名单行,花括号不对齐
+let php_noShortTags = 1                             " 禁用php短标记
 let g:xptemplate_brace_complete = "([{\<"         " 括号引号自动补全，部分代码缩进有问题
 
 """"""""
@@ -324,7 +319,7 @@ let g:xptemplate_brace_complete = "([{\<"         " 括号引号自动补全，�
 "vim-indent-plugin
 "let g:indent_guides_enable_on_vim_startup = 1
 "let g:indent_guides_auto_colors = 1
-"let g:indent_guides_guide_size = 5 
+"let g:indent_guides_guide_size = 5
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 "hi IndentGuidesOdd guibg=red ctermbg=3
@@ -334,8 +329,8 @@ let g:xptemplate_brace_complete = "([{\<"         " 括号引号自动补全，�
 "nerdcommenter注释，c+h
 "\cc, \cu, \ca
 "let NERDShutUp=1
-let NERDSpaceDelims = 1                         " 注释左右两端留空格   
-"let NERDRemoveExtraSpaces = 1  
+let NERDSpaceDelims = 1                         " 注释左右两端留空格
+"let NERDRemoveExtraSpaces = 1
 "map <C-/> <ESC><leader>cc
 
 """""""""
@@ -392,7 +387,7 @@ let g:syntastic_enable_highlighting = 0
 "let g:syntastic_python_checker="flake8,pyflakes,pep8,pylint"
 let g:syntastic_python_checkers=['pyflakes']
 highlight SyntasticErrorSign guifg=red "guibg=
-highlight SyntasticWarningSign guifg=yellow 
+highlight SyntasticWarningSign guifg=yellow
 
 let g:syntastic_cpp_include_dirs = ['/usr/include/']
 let g:syntastic_cpp_remove_include_errors = 1
@@ -405,18 +400,28 @@ let g:syntastic_enable_balloons = 1	"whether to show balloons
 "--------------------------------------------------------------------------
 "vim-airline
 "--------------------------------------------------------------------------
-"let g:airline_theme="luna" 
+let g:airline_theme="dark"
+" 显示颜色
+set t_Co=256
+set laststatus=2 
+" 使用powerline打过补丁的字体
+let g:airline_powerline_fonts = 1
 
-"这个是安装字体后 必须设置此项" 
-let g:airline_powerline_fonts = 1   
+" tabline中当前buffer两端的分隔字符
+let g:airline#extensions#tabline#left_sep = ' '
+" tabline中未激活buffer两端的分隔字符
+let g:airline#extensions#tabline#left_alt_sep = '|'
+" tabline中buffer显示编号
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
  "打开tabline功能,方便查看Buffer和切换,省去了minibufexpl插件
  let g:airline#extensions#tabline#enabled = 1
  let g:airline#extensions#tabline#buffer_nr_show = 1
 
 "设置切换Buffer快捷键"
- nnoremap <C-tab> :bn<CR>
- nnoremap <C-s-tab> :bp<CR>
+ nnoremap <C-Left> :bp<CR>
+ nnoremap <C-Right> :bn<CR>
+
  " 关闭状态显示空白符号计数
  let g:airline#extensions#whitespace#enabled = 0
  let g:airline#extensions#whitespace#symbol = '!'
@@ -442,14 +447,16 @@ let g:airline_powerline_fonts = 1
   let g:airline_symbols.notexists = '∄'
   let g:airline_symbols.whitespace = 'Ξ'
 
+
   " powerline symbols
-  "let g:airline_left_sep = ''
-  "let g:airline_left_alt_sep = ''
-  "let g:airline_right_sep = ''
-  "let g:airline_right_alt_sep = ''
-  "let g:airline_symbols.branch = ''
-  "let g:airline_symbols.readonly = ''
-  "let g:airline_symbols.linenr = ''
+""  let g:airline_left_sep = ''
+""  let g:airline_left_alt_sep = ''
+""  let g:airline_right_sep = ''
+""  let g:airline_right_alt_sep = ''
+""  let g:airline_symbols.branch = ''
+""  let g:airline_symbols.readonly = ''
+""  let g:airline_symbols.linenr = ''
+
 
 """""""""
 "多光标
@@ -459,13 +466,6 @@ let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
-"""""""""
-"indentLine
-" Vim
-let g:indentLine_color_term = 239
-"GVim
-let g:indentLine_color_gui = '#A4E57E'
-let g:indentLine_char = '┆'
 
 """"""""""
 "rainbow_parenthese
@@ -511,7 +511,7 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 "一些函数配置
 "＜F12＞生成ｔａｇｓ
 "map <F12> :call Do_CsTag()<CR>
-function Do_CsTag()
+function! Do_CsTag()
     let dir = getcwd()
     if filereadable("tags")
         if(g:iswindows==1)
@@ -572,7 +572,8 @@ endfunction
 "自动编译
 func! CompileGcc()
     exec "w"
-    let compilecmd="!gcc "
+	" 原来是gcc
+    let compilecmd="!clang "
     let compileflag="-o %< "
     if search("mpi\.h") != 0
         let compilecmd = "!mpicc "
@@ -593,6 +594,7 @@ func! CompileGcc()
 endfunc
 func! CompileGpp()
     exec "w"
+	" 原来是g++
     let compilecmd="!g++ "
     let compileflag="-o %< "
     if search("mpi\.h") != 0
@@ -651,8 +653,8 @@ map <F6> :call RunResult()<CR>
 
 """""""""""""""""""""
 "html标签自动补全
-"<!--html标签自动补全{{{-->  
-" html自动补全  
+"<!--html标签自动补全{{{-->
+" html自动补全
 
 """""""""""""""""""""
 "emmet插件用于html的补全
@@ -672,7 +674,7 @@ let g:emmet_html5 = 0
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 let mapleader=','
-" let g:user_emmet_leader_key='<C-Z>' 
+" let g:user_emmet_leader_key='<C-Z>'
 " let g:user_emmet_expandabbr_key='<Tab>'
 
 """""""""""""""""""""
@@ -725,9 +727,8 @@ nmap <C-A> ggVG
 imap <C-A> <ESC>ggVG
 
 "打开vimshell
-nmap <F10> :VimShell<CR>
-imap <F10> <ESC>:VimShell<CR>
+nmap <F7> :VimShell<CR>
+imap <F7> <ESC>:VimShell<CR>
 
-
-
- 
+imap <F10> <ESC>:YcmDiags<CR>
+nmap <F10> :YcmDiags<CR>
